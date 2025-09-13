@@ -1,0 +1,35 @@
+node_modules/
+dist/
+build/
+coverage/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+package-lock.json
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.cache
+.parcel-cache
+.next/
+/.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+/.turbo/
+logs
+*.log
+debug.log*
+/.history/
+
+# Optional lockfiles for other package managers
+yarn.lock
+
+# If using TypeScript
+*.tsbuildinfo
+
+# JetBrains IDEs
+*.iml
