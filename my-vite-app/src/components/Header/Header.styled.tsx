@@ -32,32 +32,47 @@ export const HeaderContent = styled.div`
   }
 `;
 
-export const CartButton = styled(Link)`
-  font-size: 1.2rem;
+export const CartButton = styled(Link)<React.ComponentProps<typeof Link>>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5px;
   width: 100px;
   height: 36px;
   color: white;
   background-color: #00AE1C;
   border-radius: 8px;
   text-align: center;
-  line-height: 36px;
   text-decoration: none;
   cursor: pointer;
+  font-family: Roboto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 15px;
+  line-height: 1.33;
+  letter-spacing: -0.3px;
+
   &:hover {
     background-color: #008F1A;
   }
 `;
 
+export const CartIcon = styled.img`
+  width: 16px;
+  height: 16px;
+  display: block;
+  `;
+
 export const Logo = styled.img`
-  // width: 48px;
-  // height: 40px;
-  // object-fit: contain;
-  // margin-right: 1rem;
-  // cursor: pointer;
-  // background-color: #171717;
-  // &:hover {
-  //   filter: brightness(0.9);
-  // }
+  width: 48px;
+  height: 40px;
+  object-fit: contain;
+  margin-right: 1rem;
+  cursor: pointer;
+  background-color: #171717;
+  &:hover {
+    filter: brightness(0.9);
+  }
 `;
 
 export const LogoImg = styled.img`
