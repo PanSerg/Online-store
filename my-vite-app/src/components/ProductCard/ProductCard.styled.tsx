@@ -46,9 +46,8 @@ margin-left: 8px;
 `;
 
 export const AddToCartButton = styled.button`
-width: 100%;
+width: 224px;
 height: 36px;
-margin: 8px;
 background-color: #00AE1C;
 color: white;
 border-radius: 8px;
@@ -56,9 +55,35 @@ font-family: Roboto;
 font-weight: 400;
 font-style: normal;
 font-size: 15px;
-leading-trim: CAP_HEIGHT;
 line-height: 20px;
 letter-spacing: -0.3px;
-text-align: right;
+text-align: center;
 cursor: pointer;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
+margin-bottom: 8px;
+
+		svg,
+		img {
+			width: 16px;
+			height: 16px;
+			display: block;
+			flex: 0 0 16px;
+			transition: transform 160ms ease, opacity 160ms ease;
+		}
+
+	span {
+		display: inline-block;
+	}
+
+	&[aria-pressed="true"] {
+		background-color: #009016;
+
+		svg {
+			transform: translateY(-1px) scale(0.98);
+			opacity: 0.95;
+		}
+	}
 `;
