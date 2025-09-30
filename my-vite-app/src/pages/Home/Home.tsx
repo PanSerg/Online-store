@@ -26,6 +26,13 @@ export default function Home() {
       .then(data => setProducts(data.products))
       .catch(err => console.error('Error fetching products:', err));
   }, []);
+    function addToCart(product: Product) {
+      const raw = localStorage.getItem('cart_items');
+      const parsed = raw ? JSON.parse(raw) : {};
+      const existing = parsed[product.id];
+      parsed[product.id] = existing ? { ...existing, qty: existing.qty + 1 } : { id: product.id, title: product.title, price: product.price, qty: 1, image: product.images[0] || '' };
+      localStorage.setItem('cart_items', JSON.stringify(parsed));
+    }
 
     return (
       <>
@@ -35,9 +42,9 @@ export default function Home() {
           <ProductCard
             key={product.id}
             name={product.title}
-            price={product.price}    
+            price={product.price}
             photoUrl={product.images[0] || ''}
-            onAddToCart={() => console.log(`Added ${product.title} to cart`)}
+            onAddToCart={() => addToCart(product)}
           />
         ))}
       </ProductsContainer>

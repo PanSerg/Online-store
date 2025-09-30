@@ -87,3 +87,27 @@ margin-bottom: 8px;
 		}
 	}
 `;
+
+export const ThumbsContainer = styled.div`
+	width: 100%;
+	display: flex;
+	gap: 8px;
+	padding: 0 8px 8px 8px;
+	box-sizing: border-box;
+	justify-content: center;
+`;
+
+export const Thumb = styled.img<{
+	$selected?: boolean;
+}>`
+	width: 44px;
+	height: 44px;
+	object-fit: cover;
+	border-radius: 6px;
+	cursor: pointer;
+	box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+	transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
+	opacity: ${"${props => (props.$selected ? 1 : 0.85)}"};
+	transform: ${"${props => (props.$selected ? 'translateY(-2px) scale(1.02)' : 'none')}"};
+	border: ${"${props => (props.$selected ? '2px solid #00AE1C' : '2px solid transparent')}"};
+`;
